@@ -7,7 +7,6 @@ import pandas as pd
 
 
 # Load model
-# Load model
 model_path = "app/model/iris_model.pkl"
 trained_model = joblib.load(model_path)
 
@@ -33,7 +32,6 @@ def get_output_label(sepal_length, sepal_width, petal_length, petal_width):
 
 
 # Create Gradio interface object
-# Create Gradio interface
 iface = gr.Interface(
     fn=get_output_label,
     inputs=inputs,
