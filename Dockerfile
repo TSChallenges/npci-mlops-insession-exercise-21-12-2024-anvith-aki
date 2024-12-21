@@ -1,20 +1,18 @@
-# pull python base image
-#Todo
+# Base image
+FROM python:3.9-slim
 
-# add requirements file & trained model
-#Todo
+# Set working directory
+WORKDIR /app
 
-# update pip
-#Todo
+# Copy files
+COPY requirements.txt ./
+COPY app/ ./app/
 
-# install dependencies
-#Todo
+# Install dependencies
+RUN pip install --no-cache-dir -r requirements.txt
 
-# add application file
-#Todo
+# Expose port for Gradio
+EXPOSE 7860
 
-# expose port where your application will be running
-#Todo
-
-# start application
-#Todo
+# Command to run the app
+CMD ["python", "app/main.py"]
